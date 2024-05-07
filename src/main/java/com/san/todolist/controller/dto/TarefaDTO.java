@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class NotaDTO {
+public class TarefaDTO {
     
-    private String titulo;
-    private String descricao;
+    private String nome;
+    private String status;
 }
