@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Tarefa {
-    
+
+    private Long id;
     private String nome;
     private Status status;
     private LocalDateTime dataCriacao;

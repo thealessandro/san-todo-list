@@ -13,7 +13,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ListaTarefa {
-    
+
+    private Long id;
     private String titulo;
     private String descricao;
     private LocalDateTime dataCriacao;
