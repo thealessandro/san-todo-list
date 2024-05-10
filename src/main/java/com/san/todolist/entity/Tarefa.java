@@ -2,10 +2,14 @@ package com.san.todolist.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -25,14 +29,18 @@ public class Tarefa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
+    @Column(length = 100)
+    private String descricao;
 
     private Status status;
 
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dataCriacao;
 
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dataAlteracao;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "lista_tarefa_id")
     private ListaTarefa listaTarefa;
 }
