@@ -41,6 +41,6 @@ public class Tarefa {
     private LocalDateTime dataAlteracao;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "lista_tarefa_id")
-    private ListaTarefa listaTarefa;
+    @JoinColumn(name = "objetivo_id")
+    private Objetivo objetivo;
 }

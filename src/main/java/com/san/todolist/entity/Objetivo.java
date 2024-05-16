@@ -22,8 +22,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "lista_tarefa")
-public class ListaTarefa {
+@Table(name = "objetivo")
+public class Objetivo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,7 +41,7 @@ public class ListaTarefa {
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dataAlteracao;
 
-    @OneToMany(mappedBy = "listaTarefa", fetch = FetchType.LAZY,
+    @OneToMany(mappedBy = "objetivo", fetch = FetchType.LAZY,
                cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Tarefa> tarefas;
 }
